@@ -1,0 +1,39 @@
+name= input("מה שמך? ")
+           print("שלום", name, "אתה לא מעניין אותי אז בא פשוט נתחיל")
+           print("אני מעתיק משחקים מירון, אבל המשחקים שלו הם בלתי אפשריים אז נעשה משחק יותר קל")
+           print("בחרתי מספר מ1 עד 10, אם תנחש אותו נכון תזכה בתהילת עולם")
+           print("יהיה לך 3 נסיונות. שים לב לכתוב מספר שלם, אם תכתוב משהו שהוא לא מספר תצטרך לכתוב את הניחוש שוב, ואם תכתוב שבר הוא יעוגל")
+           import random
+           num= random.randint(1,10)
+           print("בחרתי!")
+           guess1= ''
+           while True:
+             try:
+                 guess1= round(float(input("ניסיון 1: ")))
+                 break
+             except:  #ValueError
+                      print("כתוב בבקשה מספר")
+           if guess1== num:
+              print("יפה מאוד! זכית בתהילת עולם!")
+           else:
+                 guess2= ''
+                 while True:
+                     try:
+                         guess2= round(float(input("זה לא המספר, נשארו לך 2 ניסיונות. ניסיון 2: ")))
+                         break
+                     except: #ValueError
+                           print("כתוב בבקשה מספר שלם")
+                 if guess2== num:
+                    print("יפה מאוד! זכית בתהילת עולם!")
+                 else:
+                      guess3= '' 
+                      while True:
+                         try:
+                             guess3= round(float(input("לא, זה לא המספר. עוד ניסיון 1! ניסיון 3: ")))
+                             break
+                         except: #ValueEror
+                               print("כתוב בבקשה מספר שלם")
+                      if guess3== num:
+                         print("יפה מאוד! זכית בתהילת עולם!")
+                      else: print("אני מצטער", name , "אך לא זכית בתהילת עולם. ו, המספר שבחרתי היה " , num)
+           print("\n" * 5)
